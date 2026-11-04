@@ -1,0 +1,43 @@
+backend:
+  name: github
+  repo: SEU_USUARIO/SEU_REPOSITORIO
+  branch: main
+
+locale: pt
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+publish_mode: simple
+
+collections:
+  - name: "catalogo"
+    label: "Catálogo de produtos"
+    files:
+      - name: "produtos"
+        label: "Produtos, fotos e preços"
+        file: "data/catalogo.json"
+        format: "json"
+        fields:
+          - label: "Produtos"
+            name: "products"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.price}}"
+            fields:
+              - { label: "Nome do produto", name: "name", widget: "string" }
+              - { label: "Categoria", name: "category", widget: "select", options: ["Bolos", "Pudins", "Taças", "Travessas", "Outros"] }
+              - { label: "Etiqueta", name: "tag", widget: "string", required: false }
+              - { label: "Descrição", name: "description", widget: "text" }
+              - { label: "Foto do produto", name: "image", widget: "image" }
+              - { label: "Preço exibido", name: "price", widget: "string" }
+              - label: "Tamanhos / opções"
+                name: "sizes"
+                widget: "list"
+                required: false
+                field: { label: "Opção", name: "option", widget: "string" }
+              - { label: "Título da lista (ex.: Sabores ou Vai com)", name: "details_title", widget: "string", required: false }
+              - label: "Sabores / itens incluídos"
+                name: "details"
+                widget: "list"
+                required: false
+                field: { label: "Item", name: "item", widget: "string" }
+              - { label: "Texto do botão", name: "button", widget: "string", default: "Encomendar" }

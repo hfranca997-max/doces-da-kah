@@ -1,0 +1,102 @@
+{
+  "products": [
+    {
+      "name": "Bolos personalizados",
+      "category": "Bolos",
+      "tag": "EDIÇÃO ESPECIAL",
+      "description": "Bolos decorados para tornar sua comemoração inesquecível. Teremos apenas 3 modelos disponíveis.",
+      "image": "/assets/bolo-personalizado.jpg",
+      "price": "A partir de R$ 120,00",
+      "sizes": [
+        "15 cm — R$ 120,00",
+        "20 cm — R$ 150,00"
+      ],
+      "details_title": "Sabores disponíveis",
+      "details": [
+        "Chocolate",
+        "Maracujá",
+        "Casadinho",
+        "Prestígio"
+      ],
+      "button": "Encomendar este"
+    },
+    {
+      "name": "Pudim clássico",
+      "category": "Pudins",
+      "tag": "CLÁSSICO QUERIDINHO",
+      "description": "Tradicional pudim de leite condensado com baunilha, macio e com aquela calda de caramelo irresistível.",
+      "image": "/assets/pudim-classico.jpg",
+      "price": "R$ 50,00",
+      "sizes": [
+        "20 cm"
+      ],
+      "details_title": "Descrição",
+      "details": [
+        "Leite condensado",
+        "Baunilha",
+        "Calda de caramelo"
+      ],
+      "button": "Quero meu pudim"
+    },
+    {
+      "name": "Taça da felicidade — 1,4 L",
+      "category": "Taças",
+      "tag": "1,4 LITRO",
+      "description": "Deliciosas camadas recheadas para compartilhar.",
+      "image": "/assets/taca-felicidade-14l.jpg",
+      "price": "R$ 150,00",
+      "sizes": [],
+      "details_title": "Vai com",
+      "details": [
+        "Creme de cupuaçu",
+        "Pudim",
+        "Maçã",
+        "Uvas",
+        "Kiwis",
+        "Morangos",
+        "Ameixas"
+      ],
+      "button": "Encomendar"
+    },
+    {
+      "name": "Taça da felicidade — 2,8 L",
+      "category": "Taças",
+      "tag": "2,8 LITROS",
+      "description": "Deliciosas camadas recheadas para compartilhar.",
+      "image": "/assets/taca-felicidade-28l.jpg",
+      "price": "R$ 250,00",
+      "sizes": [],
+      "details_title": "Vai com",
+      "details": [
+        "Creme de cupuaçu",
+        "Pudim",
+        "Maçã",
+        "Uvas",
+        "Kiwis",
+        "Morangos",
+        "Ameixas"
+      ],
+      "button": "Encomendar"
+    },
+    {
+      "name": "Sobremesas na travessa",
+      "category": "Travessas",
+      "tag": "PARA COMPARTILHAR",
+      "description": "Escolha seu sabor favorito para deixar a mesa ainda mais especial.",
+      "image": "/assets/sobremesas-travessa.jpg",
+      "price": "Consulte valores e tamanhos disponíveis",
+      "sizes": [],
+      "details_title": "Sabores",
+      "details": [
+        "Bombom de uva",
+        "Dois amores",
+        "Ninho com morango",
+        "Mousse de maracujá",
+        "Doce de leite com ameixas",
+        "Ninho com abacaxi",
+        "Cupuaçu Felicidade"
+      ],
+      "button": "Consultar e encomendar"
+    }
+  ]
+}
