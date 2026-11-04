@@ -55,7 +55,7 @@ async function loadProducts() {
 function attachOrderButtons() {
   document.querySelectorAll('.order-button').forEach(button => {
     button.addEventListener('click', () => {
-      const message = `Olá! Vim pelo site da Doces da Kah e gostaria de encomendar: ${button.dataset.product}. Valor: ${button.dataset.price}. Pode me passar mais informações e disponibilidade?`;
+      const message = `Olá! Vim pelo site da Doces da Kah e gostaria de encomendar: ${button.dataset.product}. Pode me passar mais informações e disponibilidade?`;
       toast.classList.add('show');
       window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
       window.setTimeout(() => toast.classList.remove('show'), 2600);
