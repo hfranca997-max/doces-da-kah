@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: SEU_USUARIO/SEU_REPOSITORIO
+  repo: hfranca997-max/doces-da-kah
   branch: main
 
 locale: pt
