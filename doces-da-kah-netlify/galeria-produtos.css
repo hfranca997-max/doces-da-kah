@@ -95,3 +95,12 @@
     height: 54px;
   }
 }
+.product-gallery-main img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: none;
+  image-rendering: auto;
+}
