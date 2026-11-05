@@ -151,17 +151,57 @@ async function loadProducts() {
   }
 }
 
+
 function attachOrderButtons() {
   document.querySelectorAll('.order-button').forEach(button => {
     button.addEventListener('click', () => {
-      const message = `Olá! Vim pelo site da Doces da Kah e gostaria de encomendar: ${button.dataset.product}. Valor: ${button.dataset.price}. Pode me passar mais informações e disponibilidade?`;
+
+      const produto = button.dataset.product;
+      const preco = button.dataset.price;
+
+      const tamanho = prompt('Qual tamanho você deseja?');
+      if (tamanho === null) return;
+
+      const sabor = prompt('Qual sabor você deseja?');
+      if (sabor === null) return;
+
+      const quantidade = prompt('Qual a quantidade desejada?', '1');
+      if (quantidade === null || !quantidade.trim()) return;
+
+      const data = prompt('Para qual data deseja a encomenda?');
+      if (data === null) return;
+
+      const message =
+`Olá! 💗 Vim pelo site da Doces da Kah!
+
+Gostaria de fazer uma encomenda:
+
+🧁 Produto: ${produto}
+💰 Valor: ${preco}
+📏 Tamanho: ${tamanho}
+🍓 Sabor: ${sabor}
+📦 Quantidade: ${quantidade}
+📅 Data desejada: ${data}
+
+Gostaria de confirmar a disponibilidade.
+
+Obrigada! ❤️`;
+
       if (toast) toast.classList.add('show');
-      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
+
+      window.open(
+        \`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}\`,
+        '_blank',
+        'noopener'
+      );
+
       window.setTimeout(() => {
         if (toast) toast.classList.remove('show');
       }, 2600);
+
     });
   });
 }
+
 
 loadProducts();
