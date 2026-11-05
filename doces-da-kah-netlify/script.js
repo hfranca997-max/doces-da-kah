@@ -190,7 +190,7 @@ Obrigada! ❤️`;
       if (toast) toast.classList.add('show');
 
      window.location.href =
-  `https://web.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(message)}`;
+  `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(message)}`;
 
       window.setTimeout(() => {
         if (toast) toast.classList.remove('show');
