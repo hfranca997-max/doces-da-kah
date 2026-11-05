@@ -84,3 +84,94 @@ img { max-width: 100%; }
   object-fit: contain;
   filter: none;
 }
+
+/* FORMULARIO DE ENCOMENDA - DOCES DA KAH */
+
+.order-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(0,0,0,.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.order-modal-content {
+  background: #fff;
+  width: 100%;
+  max-width: 450px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 18px;
+  padding: 25px;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0,0,0,.2);
+}
+
+.order-modal-content h2 {
+  color: #a64b70;
+  margin-bottom: 8px;
+}
+
+.order-modal-content p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.order-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  border: 0;
+  background: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.order-form label {
+  font-weight: bold;
+  color: #663d4e;
+  margin-top: 8px;
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  background: #fff;
+}
+
+.order-form textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.order-form button {
+  margin-top: 15px;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .order-modal {
+    padding: 10px;
+  }
+
+  .order-modal-content {
+    padding: 20px;
+    max-height: 95vh;
+  }
+}
