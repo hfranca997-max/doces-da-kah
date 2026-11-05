@@ -89,7 +89,7 @@ function renderProduct(product, productIndex) {
       ${sizes.length ? `<div class="managed-details"><strong>Tamanhos e opções</strong><ul>${sizes.map(x => `<li>${escapeHTML(x)}</li>`).join('')}</ul></div>` : ''}
       ${details.length ? `<div class="managed-details"><strong>${escapeHTML(product.details_title || 'Detalhes')}</strong><ul>${details.map(x => `<li>${escapeHTML(x)}</li>`).join('')}</ul></div>` : ''}
       <div class="managed-price">${escapeHTML(product.price || 'Consulte')}</div>
-      ${orderButton(product.name || 'Produto', product.price || 'Consultar', product.button)}
+      ${orderButton(product.name || 'Produto', product.price || 'Consultar', product.button, productIndex)}
     </div>
   </article>`;
 }
@@ -152,50 +152,86 @@ async function loadProducts() {
 }
 
 
+
 function attachOrderButtons() {
   document.querySelectorAll('.order-button').forEach(button => {
     button.addEventListener('click', () => {
+      const index = Number(button.dataset.index);
+      const product = window.catalogProducts?.[index];
 
-      const produto = button.dataset.product;
-      const preco = button.dataset.price;
+      if (!product) {
+        alert('Não foi possível localizar este produto.');
+        return;
+      }
 
-      const tamanho = prompt('Qual tamanho você deseja?');
-      if (tamanho === null) return;
+      const sizes = product.sizes || [];
+      const details = product.details || [];
 
-      const sabor = prompt('Qual sabor você deseja?');
-      if (sabor === null) return;
+      const form = document.createElement('div');
+      form.className = 'order-modal';
 
-      const quantidade = prompt('Qual a quantidade desejada?', '1');
-      if (quantidade === null || !quantidade.trim()) return;
+      form.innerHTML = `
+        <div class="order-modal-content">
+          <button type="button" class="order-close">×</button>
+          <h2>Faça sua encomenda 💗</h2>
+          <p>${escapeHTML(product.name)}</p>
 
-      const data = prompt('Para qual data deseja a encomenda?');
-      if (data === null) return;
+          <form class="order-form">
+            ${sizes.length ? `
+              <label>Tamanho</label>
+              <select name="tamanho" required>
+                <option value="">Escolha o tamanho</option>
+                ${sizes.map(x => `<option>${escapeHTML(x)}</option>`).join('')}
+              </select>` : ''}
 
-      const message =
-`Olá! 💗 Vim pelo site da Doces da Kah!
+            ${details.length ? `
+              <label>Sabor / Opção</label>
+              <select name="sabor" required>
+                <option value="">Escolha uma opção</option>
+                ${details.map(x => `<option>${escapeHTML(x)}</option>`).join('')}
+              </select>` : ''}
 
-Gostaria de fazer uma encomenda:
+            <label>Quantidade</label>
+            <input name="quantidade" type="number" min="1" value="1" required>
 
-🧁 Produto: ${produto}
-💰 Valor: ${preco}
-📏 Tamanho: ${tamanho}
-🍓 Sabor: ${sabor}
-📦 Quantidade: ${quantidade}
-📅 Data desejada: ${data}
+            <label>Data de entrega</label>
+            <input name="data" type="date" min="${new Date().toLocaleDateString('en-CA')}" required>
 
-Gostaria de confirmar a disponibilidade.
+            <label>Horário de entrega</label>
+            <input name="horario" type="time" required>
 
-Obrigada! ❤️`;
+            <label>Observações</label>
+            <textarea name="observacoes" placeholder="Alguma informação adicional?"></textarea>
 
-      if (toast) toast.classList.add('show');
+            <button type="submit" class="button">Enviar pedido pelo WhatsApp 💚</button>
+          </form>
+        </div>`;
 
-     window.location.href =
-  `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(message)}`;
+      document.body.appendChild(form);
 
-      window.setTimeout(() => {
-        if (toast) toast.classList.remove('show');
-      }, 2600);
+      form.querySelector('.order-close').onclick = () => form.remove();
 
+      form.querySelector('.order-form').onsubmit = event => {
+        event.preventDefault();
+
+        const dados = new FormData(event.target);
+
+        const message = `Olá! 💗 Vim pelo site da Doces da Kah!
+
+🧁 Produto: ${product.name}
+💰 Valor: ${product.price || 'Consultar'}
+📏 Tamanho: ${dados.get('tamanho') || 'Não se aplica'}
+🍓 Sabor/opção: ${dados.get('sabor') || 'Não se aplica'}
+📦 Quantidade: ${dados.get('quantidade')}
+📅 Data: ${dados.get('data')}
+🕒 Horário: ${dados.get('horario')}
+📝 Observações: ${dados.get('observacoes') || 'Nenhuma'}
+
+Gostaria de confirmar a disponibilidade. ❤️`;
+
+        window.location.href =
+          `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(message)}`;
+      };
     });
   });
 }
