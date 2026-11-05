@@ -142,6 +142,7 @@ async function loadProducts() {
     const response = await fetch('/data/catalogo.json', { cache: 'no-store' });
     if (!response.ok) throw new Error('Não foi possível carregar o catálogo');
     const data = await response.json();
+    window.catalogProducts = data.products || [];
     target.innerHTML = (data.products || []).map((product, index) => renderProduct(product, index)).join('')
       || '<p class="loading-products">Em breve teremos novidades!</p>';
     attachGalleryControls();
