@@ -68,10 +68,10 @@
       "tag": "CLÁSSICO QUERIDINHO",
       "description": "Tradicional pudim de leite condensado com baunilha, macio e com aquela calda de caramelo irresistível.",
       "image": "/assets/Maria-Isabel.png",
-      "price": "A partir de R$ 110,00",
+      "price": "A partir de R$ 130,00",
       "sizes": [
-        "15 cm — R$ 110,00",
-        "20 cm — R$ 150,00"
+        "15 cm — R$ 130,00",
+        "20 cm — R$ 160,00"
       ],
       "details_title": "Descrição",
       "details": [
@@ -82,9 +82,9 @@
       "button": "Quero minha Maria Isabel"
     },
     {
-      "name": "Taça da felicidade — 1,4 L",
+      "name": "Taça da felicidade — 1,250 L",
       "category": "Taças",
-      "tag": "1,4 LITRO",
+      "tag": "1,250 LITRO",
       "description": "Deliciosas camadas recheadas para compartilhar.",
       "image": "/assets/taca-felicidade-14l.png",
       "price": "R$ 150,00",
