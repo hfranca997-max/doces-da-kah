@@ -190,7 +190,7 @@ Obrigada! ❤️`;
       if (toast) toast.classList.add('show');
 
       window.open(
-        \`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}\`,
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}\`,
         '_blank',
         'noopener'
       );
