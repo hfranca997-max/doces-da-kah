@@ -189,11 +189,11 @@ Obrigada! ❤️`;
 
       if (toast) toast.classList.add('show');
 
-      window.open(
-        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}\`,
-        '_blank',
-        'noopener'
-      );
+     window.open(
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
+  '_blank',
+  'noopener'
+);
 
       window.setTimeout(() => {
         if (toast) toast.classList.remove('show');
