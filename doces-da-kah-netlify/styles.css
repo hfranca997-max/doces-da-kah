@@ -5,7 +5,7 @@
 /* Produtos gerenciados pelo painel */
 .managed-products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 .managed-card{background:#fff;border:1px solid #f1e3e1;border-radius:20px;overflow:hidden;box-shadow:0 12px 35px #6115260a;display:flex;flex-direction:column}
-.managed-card-image{max-width: 100%;height: auto;object-fit:cover;background:#f7e8e4}
+.managed-card-image{max-width: auto;height: auto;object-fit:cover;background:#f7e8e4}
 .managed-card-body{padding:25px;display:flex;flex-direction:column;flex:1}
 .managed-card h3{font:700 25px "Playfair Display",serif;color:#421b23;margin:9px 0}
 .managed-card p{font-size:13px;line-height:1.8;color:#876a6e}
