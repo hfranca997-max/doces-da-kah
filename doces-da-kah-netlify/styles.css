@@ -15,4 +15,4 @@
 .managed-card .managed-price{font-size:19px;color:#b51225;font-weight:800;margin-top:auto;padding:12px 0}
 .managed-card .button{align-self:flex-start}
 .loading-products{grid-column:1/-1;text-align:center;color:#876a6e;padding:35px}
-@media(max-width:760px){.managed-products{grid-template-columns:1fr}.managed-card-image{height:250px}.managed-card .managed-details ul{columns:1}}
+@media(max-width:760px){.managed-products{grid-template-columns:1fr}.managed-card-image{height:100%}.managed-card .managed-details ul{columns:1}}
