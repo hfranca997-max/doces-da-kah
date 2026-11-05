@@ -27,8 +27,13 @@ function escapeHTML(value = '') {
   })[ch]);
 }
 
-function orderButton(product, price, label) {
-  return `<button class="button order-button" data-product="${escapeHTML(product)}" data-price="${escapeHTML(price)}">${escapeHTML(label || 'Encomendar')} <span>→</span></button>`;
+function orderButton(product, price, label, index) {
+  return `<button
+    class="button order-button"
+    data-product="${escapeHTML(product)}"
+    data-price="${escapeHTML(price)}"
+    data-index="${index}"
+  >${escapeHTML(label || 'Encomendar')} <span>→</span></button>`;
 }
 
 function getProductImages(product) {
