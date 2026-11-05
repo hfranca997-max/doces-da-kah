@@ -5,12 +5,13 @@
       "category": "Bolos",
       "tag": "EDIÇÃO ESPECIAL",
       "description": "Bolos decorados para tornar sua comemoração inesquecível. Teremos apenas 3 modelos disponíveis.",
-      "image": [
+      "image": "/assets/bolo-personalizado.png",
+"images": [
   "/assets/bolo-personalizado.png",
   "/assets/bolo-personalizado-2.png",
   "/assets/bolo-personalizado-3.png"
 ],
-      "price": "A partir de R$ 120,00",
+"price": "A partir de R$ 120,00",
       "sizes": [
         "15 cm — R$ 120,00",
         "20 cm — R$ 150,00"
