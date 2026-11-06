@@ -15,7 +15,7 @@ collections:
     files:
       - name: "produtos"
         label: "Produtos, fotos e preços"
-        file: "data/catalogo.json"
+        file: "doces-da-kah-netlify/data/catalogo.json"
         format: "json"
         fields:
           - label: "Produtos"
