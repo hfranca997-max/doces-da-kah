@@ -1,12 +1,47 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Painel da Doces da Kah</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <meta name="theme-color" content="#a64b70">
+  <title>Painel | Doces da Kah</title>
+  <link rel="stylesheet" href="admin.css">
 </head>
 <body>
-  <script src="https://cdn.jsdelivr.net/npm/decap-cms@^3.8.3/dist/decap-cms.js"></script>
+  <header class="topo">
+    <h1>Doces da Kah 💗</h1>
+    <p>Painel administrativo</p>
+  </header>
+
+  <main class="painel">
+    <h2>Bem-vinda!</h2>
+    <p>Gerencie os produtos do seu catálogo.</p>
+
+    <section class="acoes">
+      <button onclick="mostrarCadastro()">＋ Cadastrar produto</button>
+      <button onclick="carregarProdutos()">🍰 Ver produtos</button>
+    </section>
+
+    <section id="cadastro" hidden>
+      <h2>Novo produto</h2>
+      <label>Nome do produto</label>
+      <input id="nome" placeholder="Ex.: Bolo de chocolate">
+
+      <label>Preço</label>
+      <input id="preco" placeholder="Ex.: R$ 80,00">
+
+      <label>Descrição</label>
+      <textarea id="descricao" placeholder="Descreva o produto"></textarea>
+
+      <button onclick="alert('Vamos configurar o salvamento na próxima etapa!')">
+        Salvar produto
+      </button>
+    </section>
+
+    <section id="produtos"></section>
+  </main>
+
+  <script src="admin.js"></script>
 </body>
 </html>
