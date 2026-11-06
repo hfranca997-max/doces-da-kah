@@ -1,13 +1,3 @@
 {
-  "products": [
-    {
-      "button": "Encomendar",
-      "name": "Bolos personalizados",
-      "category": "Bolos",
-      "description": "Bolos decorados para tornar sua comemoração inesquecível. Teremos apenas 3 modelos disponíveis.\n\n\n",
-      "price": "Tamanhos e opções 15 cm — R$ 120,00 20 cm — R$ 150,00",
-      "sizes": [],
-      "details_title": "Sabores disponíveis Chocolate Maracujá Casadinho Prestígio"
-    }
-  ]
+  "products": []
 }
